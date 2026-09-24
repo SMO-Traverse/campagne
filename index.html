@@ -1,104 +1,168 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pas op voor Quishing</title>
 
-    <title>Pas op voor Quishing!</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <meta name="description" content="Informatie over quishing en hoe je jezelf kunt beschermen tegen phishing via QR-codes.">
+body {
+    font-family: Segoe UI, Arial, sans-serif;
+    background: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+header {
+    background: linear-gradient(135deg, #c62828, #ef5350);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            color: #333;
-            text-align: center;
-        }
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
 
-        header {
-            background: #d62828;
-            color: white;
-            padding: 25px;
-        }
+header p {
+    font-size: 1.1rem;
+}
 
-        header h1 {
-            font-size: 2rem;
-        }
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
 
-        header p {
-            margin-top: 10px;
-        }
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
 
-        main {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 0 15px;
-        }
+.card h2 {
+    color: #c62828;
+    margin-bottom: 15px;
+}
 
-        .infographic img {
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
+.tip {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: flex-start;
+}
 
-        .info {
-            margin-top: 30px;
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-        }
+.tip-icon {
+    font-size: 1.8rem;
+}
 
-        .info h2 {
-            color: #d62828;
-            margin-bottom: 15px;
-        }
+.warning {
+    background: #fff3cd;
+    border-left: 5px solid #ffc107;
+}
 
-        .info p {
-            line-height: 1.6;
-        }
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-size: 0.9rem;
+}
 
-        footer {
-            margin-top: 40px;
-            padding: 20px;
-            background: #222;
-            color: white;
-        }
-    </style>
+.button {
+    display: inline-block;
+    background: #0067b8;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background: #005091;
+}
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    .card {
+        padding: 20px;
+    }
+}
+</style>
+
 </head>
 <body>
 
 <header>
     <h1>⚠️ Pas op voor Quishing</h1>
-    <p>Phishing via QR-codes komt steeds vaker voor.</p>
+    <p>QR-codes kunnen leiden naar phishingwebsites en datadiefstal.</p>
 </header>
 
-<main>
+<div class="container">
 
-    <section class="infographic">
-        quishing.png
-    </section>
-
-    <section class="info">
-        <h2>Twijfel je?</h2>
+    <div class="card warning">
+        <h2>Wat is Quishing?</h2>
         <p>
-            Scan verdachte QR-codes niet direct. Controleer altijd eerst de
-            bestemming van de link en gebruik officiële kanalen van de
-            organisatie om informatie te verifiëren.
+            Quishing is phishing via een QR-code. Criminelen gebruiken QR-codes
+            om slachtoffers naar valse websites te sturen waar inloggegevens,
+            MFA-codes of betaalgegevens worden gestolen.
         </p>
-    </section>
+    </div>
 
-</main>
+    <div class="card">
+        <h2>Hoe herken je een verdachte QR-code?</h2>
+
+        <div class="tip">
+            <div class="tip-icon">🔍</div>
+            <div>Controleer altijd naar welke website de QR-code verwijst voordat je deze opent.</div>
+        </div>
+
+        <div class="tip">
+            <div class="tip-icon">🚫</div>
+            <div>Scan geen QR-codes uit onverwachte e-mails of WhatsApp-berichten.</div>
+        </div>
+
+        <div class="tip">
+            <div class="tip-icon">🏢</div>
+            <div>Wees extra voorzichtig met QR-codes die beweren van Microsoft, banken of pakketdiensten te zijn.</div>
+        </div>
+
+        <div class="tip">
+            <div class="tip-icon">🔐</div>
+            <div>Voer nooit wachtwoorden of MFA-codes in zonder eerst de URL te controleren.</div>
+        </div>
+
+    </div>
+
+    <div class="card">
+        <h2>Verdachte QR-code ontvangen?</h2>
+        <p>
+            Meld dit direct bij de IT-servicedesk of securityafdeling van je organisatie.
+        </p>
+
+        security@bedrijf.nl
+            Meld een verdachte QR-code
+        </a>
+    </div>
+
+</div>
 
 <footer>
-    © 2026 | Bewustwordingscampagne Quishing
+    Blijf alert. Denk na voordat je scant.
 </footer>
 
 </body>
