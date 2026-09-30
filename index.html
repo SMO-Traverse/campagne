@@ -1,299 +1,235 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber Security Awareness - Pas op voor Quishing</title>
-    <style>
-        /* Algemene Stijlen & Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pas op voor Quishing!</title>
 
-        body {
-            background-color: #f4f7f6;
-            color: #333;
-            line-height: 1.6;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        /* Navigatiebalk */
-        nav {
-            background-color: #0d2c3a;
-            color: #fff;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#f5f8fc;
+    color:#1f2937;
+    line-height:1.6;
+}
 
-        nav .logo {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: #4dc2a9;
-        }
+.hero img{
+    width:100%;
+    display:block;
+}
 
-        nav ul {
-            list-style: none;
-            display: flex;
-        }
+.header{
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+    color:white;
+    padding:60px 20px;
+    text-align:center;
+}
 
-        nav ul li {
-            margin-left: 20px;
-        }
+.header h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
 
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
+.header p{
+    font-size:1.2rem;
+    max-width:800px;
+    margin:auto;
+}
 
-        nav ul li a:hover {
-            color: #4dc2a9;
-        }
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px;
+}
 
-        /* Hero Banner met Geüploade Afbeelding */
-        .hero-banner {
-            /* Vervang 'image_Nx6pIH.png' met het juiste lokale bestandspad naar jouw afbeelding */
-            background-image: linear-gradient(rgba(13, 44, 58, 0.75), rgba(13, 44, 58, 0.75)), url('image_Nx6pIH.png');
-            background-size: cover;
-            background-position: center;
-            height: 450px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 0 20px;
-        }
+.card{
+    background:white;
+    border-radius:16px;
+    padding:30px;
+    margin-bottom:25px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
 
-        .hero-content h1 {
-            font-size: 2.8rem;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
+.card h2{
+    color:#1e40af;
+    margin-bottom:15px;
+}
 
-        .hero-content p {
-            font-size: 1.3rem;
-            max-width: 800px;
-            margin: 0 auto 25px auto;
-            color: #e0f2fe;
-        }
+.warning{
+    background:#fff3cd;
+    border-left:6px solid #f59e0b;
+}
 
-        .cta-btn {
-            display: inline-block;
-            background-color: #4dc2a9;
-            color: #0d2c3a;
-            padding: 12px 30px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-            transition: transform 0.2s, background-color 0.3s;
-        }
+.danger{
+    background:#fee2e2;
+    border-left:6px solid #dc2626;
+}
 
-        .cta-btn:hover {
-            background-color: #3eb098;
-            transform: translateY(-2px);
-        }
+.tips{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    margin-top:20px;
+}
 
-        /* Content Secties algemeen */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
+.tip{
+    background:white;
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
 
-        section h2 {
-            font-size: 2.2rem;
-            color: #0d2c3a;
-            margin-bottom: 20px;
-            text-align: center;
-            position: relative;
-        }
+.tip h3{
+    color:#2563eb;
+    margin-bottom:10px;
+}
 
-        section h2::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background-color: #4dc2a9;
-            margin: 10px auto 0 auto;
-            border-radius: 2px;
-        }
+.footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
 
-        /* Wat is Quishing Sectie */
-        .intro-box {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            margin-bottom: 40px;
-            border-left: 5px solid #0d2c3a;
-        }
+.highlight{
+    color:#dc2626;
+    font-weight:bold;
+}
 
-        /* Herkenningspunten Kaarten Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
+.cta{
+    background:linear-gradient(135deg,#2563eb,#06b6d4);
+    color:white;
+    text-align:center;
+    border-radius:16px;
+    padding:40px;
+}
 
-        .card {
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
+.cta h2{
+    color:white;
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+@media(max-width:768px){
+    .header h1{
+        font-size:2rem;
+    }
 
-        .card h3 {
-            color: #0d2c3a;
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .card h3::before {
-            content: '⚠️';
-            margin-right: 10px;
-            font-size: 1.2rem;
-        }
-
-        /* Actie/Preventie Sectie */
-        .preventie {
-            background-color: #0d2c3a;
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            border-radius: 8px;
-            margin-top: 40px;
-        }
-
-        .preventie h2 {
-            color: white;
-        }
-
-        .preventie ul {
-            list-style: none;
-            max-width: 700px;
-            margin: 30px auto 0 auto;
-            text-align: left;
-        }
-
-        .preventie ul li {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .preventie ul li::before {
-            content: '✓';
-            color: #4dc2a9;
-            font-weight: bold;
-            margin-right: 15px;
-            font-size: 1.2rem;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #0a222d;
-            color: #7c98a6;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 60px;
-            font-size: 0.9rem;
-        }
-    </style>
+    .header p{
+        font-size:1rem;
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <!-- Navigatiebalk -->
-    <nav>
-        <div class="logo">TRAVERSE SECURITY</div>
-        <ul>
-            <li><a href="#wat-is-quishing">Wat is het?</a></li>
-            <li><a href="#herkennen">Hoe te herkennen?</a></li>
-            <li><a href="#tips">Preventietips</a></li>
-        </ul>
-    </nav>
+<div class="hero">
+    <img src=Cyber-security-maand-logobanner.png>
+</div>
 
-    <!-- Hero Banner (Gebruikt jouw Cyber Security Maand afbeelding) -->
-    <header class="hero-banner">
-        <div class="hero-content">
-            <h1>Cyber Security Awareness: Quishing</h1>
-            <p>Scan niet zomaar elke code. Criminelen gebruiken valse QR-codes om jouw inloggegevens en data te stelen.</p>
-            <a href="#herkennen" class="cta-btn">Leer Quishing Herkennen</a>
-        </div>
-    </header>
+<section class="header">
+    <h1>⚠️ O jee, je bent er in getrapt! ⚠️</h1>
+    <p>
+        Je bent slachtoffer van Quisging. Cybercriminelen gebruiken steeds vaker QR-codes om mensen te misleiden.
+        Scan daarom nooit blindelings een QR-code. Controleer altijd waar een QR-code
+        vandaan komt voordat je actie onderneemt.
+    </p>
+</section>
 
-    <div class="container">
-        
-        <!-- Wat is Quishing Sectie -->
-        <section id="wat-is-quishing" style="margin-bottom: 60px;">
-            <h2>Wat is Quishing?</h2>
-            <div class="intro-box">
-                <p><strong>Quishing</strong> is een relatief nieuwe vorm van phishing waarbij kwaadwillenden gebruikmaken van **QR-codes** (Quick Response). In plaats van een malafide link in een e-mail of sms, sturen fraudeurs je een QR-code via de mail, post of plakken deze over legitieme QR-codes heen (zoals op parkeermeters of laadpalen). Zodra je de code scant met je smartphone, word je ongemerkt doorgestuurd naar een nagemaakte inlogpagina of wordt er malware op je toestel geïnstalleerd.</p>
-            </div>
-        </section>
+<div class="container">
 
-        <!-- Hoe herken je Quishing Sectie -->
-        <section id="herkennen">
-            <h2>Hoe herken je Quishing?</h2>
-            <p style="text-align: center; max-width: 600px; margin: 0 auto; color: #666;">Wees extra alert als je een QR-code tegenkomt. Let specifiek op de volgende signalen:</p>
-            
-            <div class="grid">
-                <!-- Kaart 1 -->
-                <div class="card">
-                    <h3>Onverwachte verificaties</h3>
-                    <p>Je ontvangt een e-mail of bericht (bijvoorbeeld namens de IT-afdeling of je bank) waarin dringend gevraagd wordt om een QR-code te scannen om MFA (Multi-Factor Authenticatie) te resetten of je account te verifiëren.</p>
-                </div>
-                <!-- Kaart 2 -->
-                <div class="card">
-                    <h3>Overgeplakte stickers</h3>
-                    <p>Fysieke QR-codes op openbare plekken, zoals parkeermeters, deelfietsen of menukaarten, zijn voorzien van een sticker die over de originele code heen is geplakt.</p>
-                </div>
-                <!-- Kaart 3 -->
-                <div class="card">
-                    <h3>Vreemde URL-previews</h3>
-                    <p>Wanneer je de QR-code met de camera van je telefoon focust, verschijnt er een link. Komt deze URL niet exact overeen met de officiële website van de organisatie? Scan dan absoluut niet door.</p>
-                </div>
-                <!-- Kaart 4 -->
-                <div class="card">
-                    <h3>Tijdsdruk en paniek</h3>
-                    <p>Net als bij normale phishing probeert het bericht haast te creëren. "Scan binnen 24 uur om blokkering te voorkomen." Trap hier niet in; legitieme instanties communiceren vrijwel nooit op deze manier.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Preventietips Sectie -->
-        <section id="tips">
-            <div class="preventie">
-                <h2>Wat moet je doen (en laten)?</h2>
-                <ul>
-                    <li><strong>Controleer altijd de preview-link</strong> voordat je daadwerkelijk doorklikt nadat je een QR-code hebt gescand.</li>
-                    <li><strong>Gebruik de ingebouwde camera-app</strong> van je telefoon in plaats van onbekende QR-scanner apps van derden; de standaard camera toont de URL veiliger.</li>
-                    <li><strong>Log nooit in op bedrijfsaccounts</strong> via een pagina die geopend is via een gescande QR-code. Typ handmatig het webadres in.</li>
-                    <li><strong>Vertrouw je het niet?</strong> Meld verdachte e-mails met QR-codes direct bij de IT-servicedesk of de security-afdeling.</li>
-                </ul>
-            </div>
-        </section>
-
+    <div class="card danger">
+        <h2>Wat is Quishing?</h2>
+        <p>
+            Quishing is een vorm van phishing waarbij cybercriminelen gebruikmaken van
+            QR-codes. Door een QR-code te scannen kun je ongemerkt worden doorgestuurd
+            naar een nagemaakte website waar inloggegevens, wachtwoorden of andere
+            vertrouwelijke informatie wordt gestolen.
+        </p>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Traverse Cyber Security Awareness Campagne. Samen houden we onze organisatie veilig.</p>
+    <div class="card">
+        <h2>Waarom is Quishing gevaarlijk?</h2>
+        <ul>
+            <li>QR-codes verbergen de daadwerkelijke webadresbestemming.</li>
+            <li>Mobiele apparaten tonen beveiligingswaarschuwingen vaak minder duidelijk.</li>
+            <li>Valse websites van Microsoft-, bank- of pakketdiensten lijken vaak betrouwbaar.</li>
+            <li>Criminelen kunnen spyware laten downloaden.</li>
+        </ul>
+    </div>
+
+    <div class="card warning">
+        <h2>Hoe herken je Quishing?</h2>
+
+        <div class="tips">
+
+            <div class="tip">
+                <h3>📧 Onverwachte QR-code</h3>
+                <p>
+                    Ontvang je ineens een QR-code via e-mail, Teams, WhatsApp of een brief?
+                    Wees extra alert.
+                </p>
+            </div>
+
+            <div class="tip">
+                <h3>🚨 Gevoel van urgentie</h3>
+                <p>
+                    Berichten die aangeven dat je account verloopt, wordt geblokkeerd
+                    of direct actie vereist, zijn verdacht.
+                </p>
+            </div>
+
+            <div class="tip">
+                <h3>🌐 Controleer de URL</h3>
+                <p>
+                    Bekijk altijd het adres dat verschijnt voordat je de website opent.
+                    Let op spelfouten of vreemde domeinnamen.
+                </p>
+            </div>
+
+            <div class="tip">
+                <h3>🔐 Vraag om inloggegevens</h3>
+                <p>
+                    Wordt gevraagd om jouw Microsoft-account of wachtwoord in te voeren?
+                    Controleer eerst of het een officiële website betreft.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Wat moet je doen?</h2>
+
+        <ol>
+            <li>Scan niet automatisch elke QR-code.</li>
+            <li>Controleer altijd de afzender.</li>
+            <li>Controleer de URL voordat je deze opent.</li>
+            <li>Voer nooit wachtwoorden in op verdachte websites.</li>
+            <li>Meld verdachte QR-codes direct bij het ICT Team.</li>
+        </ol>
+    </div>
+
+    <div class="cta">
+        <h2>Denk voordat je scant</h2>
+        <p>
+            Een QR-code lijkt misschien onschuldig, maar kan leiden naar een valse website.
+            Controleer altijd de bestemming voordat je persoonlijke of zakelijke gegevens invoert.
+        </p>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <p>
+        &copy; 2026 SMO-Traverse Cyber Security Awareness Campagne. Doe jij het veilig?
+    </p>
+</footer>
+
+</body>
+</html>
